@@ -170,3 +170,36 @@ for (const retroToy of retroToys) {
 }
 
 console.log(retroToys)
+
+
+const addToyToInventory = (toyObject) => {
+    /*
+        Step 1: Get maximum id current in array
+    */
+    // Get index of last item in array
+    const lastIndex = retroToys.length - 1
+
+    // Get the last object in the array
+    const currentLastToy = retroToys[lastIndex]
+
+    // Get id property value of last toy
+    const maxId = currentLastToy.id
+
+
+    /*
+        Step 2: Increase the current max id by 1
+    */
+    const idForNewToy = maxId + 1
+
+
+    /*
+        Step 3: Add the id property to the toy object
+    */
+    toyObject.id = idForNewToy
+
+
+    /*
+        Step 4: Add the toy object to the array
+    */
+    retroToys.push(toyObject)
+}
