@@ -135,4 +135,38 @@ for (const retroToy of retroToys) {
 }
 // return retroToyToFind
 
+const teddyRuxpin = {
+    toyLine:"Teddy Bears",
+    name: "Teddy Ruxpin",
+    manufacturer: "Hasbro",
+    generation: "G1",
+    faction: "First Animated Talkin Toy",
+    releaseYear: 1985,
+    originalPrice: 45.99
+    }
 
+
+const addToyToInventory = (toyObject) => {
+    const lastIndex = retroToys.length - 1
+    const currentLastToy = retroToys[lastIndex]
+    const maxId = currentLastToy.id
+    const idForNewToy = maxId + 1
+
+    toyObject.id = idForNewToy
+    retroToys.push(toyObject)
+}
+
+/*
+    Now that the function is defined, you can invoke it
+    and put a value in the parenthesis (a.k.a. the argument).
+    The object will be stored in the `toyObject`
+    parameter for use in the function.
+*/
+addToyToInventory(teddyRuxpin)
+
+// Display all the toys
+for (const retroToy of retroToys) {
+    console.log(`The ${retroToy.manufacturer} ${retroToy.name} costs ${retroToy.originalPrice} dollars. It was released It was released in ${retroToy.releaseYear}`)
+}
+
+console.log(retroToys)
